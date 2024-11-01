@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Número Par o Impar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Número Par o Impar</h1>
+  <input type="number" id="numero" placeholder="Ingresa un número">
+  <button onclick="determinarParidad()">Determinar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function determinarParidad() {
+      let numero = parseInt(document.getElementById("numero").value);
+      let resultado = "";
+
+      if (numero % 2 === 0) {
+        resultado = "El número es par";
+      } else {
+        resultado = "El número es impar";
+      }
+
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>

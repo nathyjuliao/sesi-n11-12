@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Evaluación de Descuentos</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #ffe6f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1, p, button {
+      color: #ff66b2;
+    }
+
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ff66b2;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Evaluación de Descuentos</h1>
+  <input type="number" id="monto" placeholder="Ingresa el monto total de la compra">
+  <button onclick="evaluarDescuento()">Calcular Descuento</button>
+  <p id="resultado"></p>
+
+  <script>
+    function evaluarDescuento() {
+      let monto = parseFloat(document.getElementById("monto").value);
+      let montoFinal = monto > 100 ? monto * 0.9 : monto; // Aplica 10% de descuento si corresponde
+
+      document.getElementById("resultado").textContent = "El monto final a pagar es: $" + montoFinal.toFixed(2);
+    }
+  </script>
+</body>
+</html>
+

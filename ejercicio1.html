@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Verificación de Calificaciones</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Verificación de Calificaciones</h1>
+  <input type="number" id="calificacion" placeholder="Ingresa tu calificación (0-100)">
+  <button onclick="verificarCalificacion()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function verificarCalificacion() {
+      let calificacion = parseInt(document.getElementById("calificacion").value);
+      let resultado = "";
+
+      if (calificacion >= 90) {
+        resultado = "Aprobado con honores";
+      } else if (calificacion >= 70) {
+        resultado = "Aprobado";
+      } else {
+        resultado = "Reprobado";
+      }
+
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>

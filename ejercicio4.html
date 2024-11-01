@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Adivinanza de Números</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #ffe6f2;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1, p, button {
+      color: #ff66b2;
+    }
+
+    input, button {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ff66b2;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Juego de Adivinanza de Números</h1>
+  <input type="number" id="numeroUsuario" placeholder="Adivina un número entre 1 y 10" min="1" max="10">
+  <button onclick="adivinarNumero()">Adivinar</button>
+  <p id="resultado"></p>
+
+  <script>
+    // Genera un número aleatorio entre 1 y 10
+    const numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+
+    function adivinarNumero() {
+      // Obtiene el número ingresado por el usuario
+      let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
+      let resultado;
+
+      // Verifica si el usuario adivinó el número
+      if (numeroUsuario === numeroAleatorio) {
+        resultado = "¡Felicidades, adivinaste el número!";
+      } else {
+        resultado = "Lo siento, el número era " + numeroAleatorio;
+      }
+
+      // Muestra el resultado
+      document.getElementById("resultado").textContent = resultado;
+    }
+  </script>
+</body>
+</html>
